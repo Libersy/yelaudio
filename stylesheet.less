@@ -122,6 +122,23 @@ header {
 }
 
 /* ===============================
+   SECTIONS
+   =============================== */
+
+.grey {
+    background-color: #ebebeb;
+    padding: 6em 0;
+    @media @tablet {
+        padding: 4em 0;
+    }
+    @media @mobile {
+        padding: 3em 0;
+    }
+}
+
+
+
+/* ===============================
    FOOTER
    =============================== */
 
@@ -356,6 +373,216 @@ footer p {
 .main .widget.extendednavigation {
   *zoom: 1;
 }
+
+
+/* ===============================
+   DESIGNS / DEVICES
+   =============================== */
+
+section {
+    &.designs-devices {
+
+        /* DESIGNS */
+        .designs {
+            .template-slider {
+                background: #fff;
+                .border-radius(5px);
+                max-width: 536px;
+                padding: 0;
+                margin: 5em 0 0; 
+                -webkit-box-shadow: 0 0 60px rgba(0, 0, 0, 0.08);
+                box-shadow: 0 0 60px rgba(0, 0, 0, 0.08);
+                @media @tablet {
+                    margin: 3em 0 2em;
+                }
+                .controls {
+                    margin-left: 8px;
+                    height: 16px;
+                    @media @tablet {
+                        height: 13px;
+                    }
+                    span {
+                        display: inline-block;
+                        width: 4px;
+                        height: 4px;
+                        margin: 0 -1px 4px 0;
+                        .border-radius(50%);
+                        border: 1px solid @color-swatch4;
+                        vertical-align: middle;
+                        @media @tablet {
+                            height: 3px;
+                            width: 3px;
+                            margin: 0 -1px 8px 0;
+                        }
+                    }
+                }
+                .slides {
+                    .slide {
+                        background-repeat: no-repeat;
+                        background-position: top center;
+                        .bg-cover;
+                        min-height: 372px;
+                        @media @tablet {
+                            min-height: 250px;
+                        }
+                        &.one {
+                            background-image: image('/images/surfandlove-slide.jpg');
+                        }
+                    }
+                }
+            }
+        }
+        /* DEVICES */
+        .devices {
+            padding: 6em 0 0;
+            background-image: image('/images/device-bg.jpg');
+            background-repeat: no-repeat;
+            background-position: right top;
+            @media @tablet {
+                padding: 4em 0;
+            }
+            @media @mobile {
+                padding: 3em 0;
+            }
+            h3 {
+                @media @mobile {
+                    margin-bottom: 15%;
+                }
+            }
+            .tabs-2 {
+                position: relative;   
+                min-height: 464px; /* This part sucks */
+                margin: 35px 0 0;
+                @media @tablet {
+                    min-height: 292px;
+                }
+            }
+            .slide {
+                label {
+                    padding: 22px 0;
+                    font-family: @font-swatch4-font-family;
+                    font-size: 22px;
+                    border-top: 5px solid #ff6890;
+                    position: relative;
+                    top: 433px;
+                    display: inline-block;
+                    line-height: 45px;
+                    width: 50%;
+                    float: left;
+                    text-align: center;
+                    background: #2b5460;
+                    color: white;
+                    -webkit-font-smoothing: antialiased;
+                    .box-sizing;
+                    &:hover {
+                        background-color: @color-swatch3;
+                        cursor: pointer;
+                        -webkit-transition: 0.2s;
+                        -moz-transition: 0.2s;
+                        transition: 0.2s;
+                    }
+                    @media @tablet {
+                        top: 286px;
+                        padding: 10px 0;
+                        font-size: 19px;
+                    }
+                }
+                [type=radio] {
+                    display: none;    
+                }
+                .tab-content {
+                    position: absolute;
+                    transition: all 0.75s ease;
+                    left: -125px;
+                    width: 100%;
+                    padding: 0;
+                    opacity: 0;
+                    height: 100%;
+                    &.sml {
+                        width: 70%;
+                        margin: 0 15%;
+                        @media @mobile {
+                            width: 80%;
+                            margin: 0 10%;
+                        }
+                    }
+                    .iphone {
+                        max-width: 50%;
+                        margin-top: 14%;
+                        @media @tablet {
+                            margin-top: 3%;
+                        }
+                        @media @mobile {
+                            margin-top: -3%;
+                        }
+                        img {
+                            @media @mobile {
+                                display: block;
+                                margin: 0 0 0 auto;
+                                width: 80%;
+                                right: 0;
+                            }
+                            @media @mobileSml {
+                                width: 100%;
+                            }
+                        }
+                        @media @mobileSml {
+                            max-width: 100%;
+                        }
+                    }
+                    .ipad {
+                        max-width: 70%;
+                        margin-top: 5%;
+                        @media @tablet {
+                            max-width: 80%;
+                        }
+                        @media @mobile {
+                            max-width: 100%;
+                            margin-top: -6%;
+                        }
+                        @media @mobileSml {
+                            margin-top: 0;
+                        }
+                        img {
+                            @media @mobile {
+                                max-width: 80%;
+                            }
+                            @media @mobileSml {
+                                max-width: 100%;
+                            }
+                        }
+                    }
+                    p {
+                        font-family: @font-swatch5-font-family;
+                        color: @color-swatch1;
+                        &.desktop {
+                            display: block;
+                            @media @tablet {
+                                display: none;
+                            }
+                        }
+                        &.tablet {
+                            display: none;
+                            @media @tablet {
+                                display: block;
+                            }
+                        }
+                    }
+                    img {
+                        position: absolute;
+                        bottom: 31px;
+                        left: 0;
+                        @media @tablet {
+                            bottom: 6px;
+                        }
+                    }
+                } /* end tab-content */
+            } /* end slide */
+        } /* end devices */
+    }
+}
+
+
 
 
 /* ===============================
